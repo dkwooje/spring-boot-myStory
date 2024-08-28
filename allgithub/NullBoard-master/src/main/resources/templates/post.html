@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/board/post/{post_id}/comment" method="POST">
+    <input name="content">
+    <input name="user_id" th:value="${comment.id}" style="display : none">
+    <button>전송</button>
+</form>
+</body>
+</html>
