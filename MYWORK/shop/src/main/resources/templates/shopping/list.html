@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div th:replace="~{navi/narive.html::abc}"></div>
+<div th:replace="~{navi/navige.html::bobo}"></div>
+<p>재고</p>
+<div class="items" th:each="EA:${item}">
+    <div>
+        <p>재고</p>
+    <a th:text="${EA.title}">이름:</a>
+    <a th:text="${EA.price}">가격:</a>
+    <a th:text="${EA.color}">색상:</a>
+    <a th:text="${EA.shape}">모양:</a>
+    <a th:text="${EA.age}">유통기한:</a>
+    </div>
+</div>
+
+</body>
+</html>

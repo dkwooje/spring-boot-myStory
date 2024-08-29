@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div th:replace="~{navi.html::rora}"></div>
+
+<p>삭제할 댓글 목록</p>
+
+<div>
+    <div>
+    <h4>상세페이지</h4>
+    <h4 th:text="${dl.user_id}"></h4>
+    <h4 th:text="${dl.post_id}"></h4>
+    <h4 th:text="${dl.content}"></h4>
+    </div>
+
+<div>
+    <a th:href="@{'/delete/'+ ${dl.comment_id} }">삭제페이지</a>
+</div>
+
+
+</div>
+
+
+</body>
+</html>
