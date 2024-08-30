@@ -18,21 +18,35 @@ public class UserControll {
     private final UserService userService;
 
 
+    @GetMapping("/user")
+    String register1() {
+        return "userpage.html";
+    }
 
     @GetMapping("/register")
-    String register1(){
+    String register2() {
         return "userRegister.html";
     }
 
     @PostMapping("/register")
-    String register2(
-                    String username,
-                    String password,
-                    String email){
+    String register3(
+            String username,
+            String password,
+            String email) {
         userService.addUser(username, password, email);
-        return "userRegister.html";
+        return "userpage.html";
+    }
+
+    @GetMapping("/forcing")
+    String register4() {
+        return "userRegister10000.html";
     }
 
 
+    @PostMapping("/forcing")
+    String register5() {
+        userService.createUser();
+        return "userpage.html";
 
+    }
 }
