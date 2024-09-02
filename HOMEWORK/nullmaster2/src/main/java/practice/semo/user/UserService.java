@@ -26,29 +26,4 @@ public class UserService {
         userRepository.save(table);
 
     }
-
-
-    public void createUser() {
-        List<UserTable> users = new ArrayList<>();
-
-        for (int i = 0; i < 10000; i++) {
-            UserTable user = new UserTable();
-            user.setUsername("user" + i);
-            user.setPassword("Q1W2E3R4" + i);
-            user.setEmail("durjvnr" + i + "@naver.com");
-            users.add(user);
-
-
-            if (i % 500 == 0) {
-                userRepository.saveAll(users);
-                userRepository.flush();
-                users.clear();
-            }
-        }
-
-
-        if (!users.isEmpty()) {
-            userRepository.saveAll(users);
-        }
-    }
 }
