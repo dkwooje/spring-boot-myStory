@@ -12,12 +12,14 @@ public class CommentService {
 
     private final CommentRepository commentRepository;
 
-    public void saveWord(Integer post_id, Integer user_id, String content) {
+    public void saveWord(Integer post_id, Integer user_id, String content){
+        
         Comment1 comment = new Comment1();
         comment.setPost_id(post_id);
         comment.setUser_id(user_id);
         comment.setContent(content);
         commentRepository.save(comment);
+
     }
 
     public void deleteWord(Integer comment_id){
@@ -27,11 +29,14 @@ public class CommentService {
     }
 
     public void contentfix(Integer comment_id, String content) {
+        /*
         Comment1 comment = commentRepository.findById(comment_id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid comment ID: " + comment_id));
         comment.setContent(content);
         commentRepository.save(comment);
-/*
+
+         */
+
         Optional<Comment1> result = commentRepository.findById(comment_id);
         if(result.isPresent()){
             Comment1 comment1 = result.get();
@@ -41,9 +46,10 @@ public class CommentService {
             throw new IllegalArgumentException("Invalid comment ID: " + comment_id);
         }
 
- */
+
     }
 }
+
 
 
 
